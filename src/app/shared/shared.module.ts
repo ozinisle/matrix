@@ -22,8 +22,9 @@ import { AlertService } from './directives/alert/alert.service';
   ],
   providers: [
     ErrorInterceptor,
-    fakeBackendProvider,
-    AlertService
+    AlertService,
+
+    // fakeBackendProvider,
   ],
 })
 export class SharedModule { }

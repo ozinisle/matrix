@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service';
 import { AlertService } from '../../../shared/directives/alert/alert.service';
 import { MatrixConstants } from '../../../shared/constants/matrix.constants';
+import { LoginForm } from '../../models/login-component.modal';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,10 @@ import { MatrixConstants } from '../../../shared/constants/matrix.constants';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: LoginForm = new LoginForm();
-  loading = false;
-  submitted = false;
-  returnUrl: string;
+  public loginForm: LoginForm = new LoginForm();
+  public loading = false;
+  public submitted = false;
+  public returnUrl: string;
 
   constructor(
 
@@ -55,25 +56,3 @@ export class LoginComponent implements OnInit {
   }
 }
 
-export class LoginForm {
-  public username: MatrixLoginFormInputField = new MatrixLoginFormInputField();
-  public password: MatrixLoginFormInputField = new MatrixLoginFormInputField();
-
-  public isValidationSuccess(): boolean {
-    return this.username.errors.required || this.password.errors.required;
-  }
-
-  public validate() {
-    this.username.errors.required = (this.username.value && this.username.value.length > 6) ? false : true;
-    this.password.errors.required = (this.password.value && this.password.value.length >= 8) ? false : true;
-  }
-}
-
-export class MatrixLoginFormInputField {
-  public value: string;
-  public errors: MatrixLoginFormInputFieldErrors = new MatrixLoginFormInputFieldErrors();
-}
-
-export class MatrixLoginFormInputFieldErrors {
-  public required: boolean = false;
-}

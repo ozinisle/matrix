@@ -2,13 +2,16 @@
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { MatrixConstants } from '../../shared/constants/matrix.constants';
+import { Observable } from 'rxjs';
+import { Route, Router } from '@angular/router';
 
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
-    login(username: string, password: string) {
-        return this.http.post<any>(`${MatrixConstants.url.apiUrl}/users/authenticate`, { username: username, password: password })
+    login(username: string, password: string): Observable<any> {
+        return this.http.post<any>(MatrixConstants.url.apiUrl + MatrixConstants.url.authenticationUrl,
+            { username: username, password: password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
@@ -23,5 +26,7 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem(MatrixConstants.commonTerms.currentUser);
+        this.router.navigate([MatrixConstants.url.login]);
+
     }
 }
