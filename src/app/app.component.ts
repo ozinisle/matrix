@@ -7,7 +7,7 @@ import { AuthenticationService } from './security/services/authentication.servic
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  public title: string = 'app';
 
   constructor(private authService: AuthenticationService) { }
 

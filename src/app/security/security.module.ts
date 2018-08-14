@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -21,6 +23,11 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
     AuthenticationService,
     UserService
   ],

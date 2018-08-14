@@ -6,6 +6,7 @@ export const MatrixConstants = Object.freeze({
         login: '/login',
         apiUrl: 'http://localhost/matrix-agents/',
         authenticationUrl: `authentication/authenticate-user.php`,
+        signOut: `authentication/sign-out.php`,
     },
     messages: {
         registrationSuccess: 'Registration successful',
