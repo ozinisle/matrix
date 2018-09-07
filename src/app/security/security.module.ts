@@ -9,6 +9,10 @@ import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatrixCommunicationChannelEncryptionService } from './services/matrix-communication-channel-encryption.service';
+import { AuthenticatedContentLayoutComponent } from './components/authenticated-content-layout/authenticated-content-layout.component';
+import { MatrixHeaderComponent } from '../shared/components/matrix-header/matrix-header.component';
+import { UnauthenticatedContentLayoutComponent } from './components/unauthenticated-content-layout/unauthenticated-content-layout.component';
 
 @NgModule({
   imports: [
@@ -18,8 +22,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     RouterModule
   ],
   declarations: [
+    MatrixHeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AuthenticatedContentLayoutComponent,
+    UnauthenticatedContentLayoutComponent
+  ],
+  exports: [
+    AuthenticatedContentLayoutComponent
   ],
   providers: [
     AuthGuard,
@@ -29,7 +39,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
       multi: true
     },
     AuthenticationService,
-    UserService
+    UserService,
+    MatrixCommunicationChannelEncryptionService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -6,3 +6,5 @@
 @import "./assets/styles/_colors.scss";
 @import "./assets/styles/_fonts.scss";
 @import "./assets/styles/_typography.scss";
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }

@@ -6,6 +6,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
 import { AlertComponent } from './directives/alert/alert.component';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { AlertService } from './directives/alert/alert.service';
+import { MatrixHeaderComponent } from './components/matrix-header/matrix-header.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { AlertService } from './directives/alert/alert.service';
     AlertComponent
   ],
   exports: [
+    MaterialModule,
     AlertComponent,
     PageNotFoundComponent
   ],

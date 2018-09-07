@@ -9,9 +9,6 @@ import { AuthenticationService } from './security/services/authentication.servic
 export class AppComponent {
   public title: string = 'app';
 
-  constructor(private authService: AuthenticationService) { }
+  constructor() { }
 
-  public signOut(): void {
-    this.authService.logout();
-  }
 }

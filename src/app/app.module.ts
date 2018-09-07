@@ -9,9 +9,12 @@ import { appRouter } from './app.router';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MaterialModule } from './shared/material/material.module';
+import { MoiModule } from './modules/moi/moi.module';
+import { MyContactsModule } from './modules/my-contacts/my-contacts.module';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     appRouter,
+    MaterialModule,
     SharedModule,
     SecurityModule,
-    LandingPageModule
+    LandingPageModule,
+    MyContactsModule,
+    MoiModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'always' } }
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
