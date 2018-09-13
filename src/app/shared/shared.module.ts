@@ -5,6 +5,8 @@ import { MaterialModule } from './material/material.module';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { AlertComponent } from './directives/alert/alert.component';
 import { fakeBackendProvider } from './helpers/fake-backend';
+import { AlertService } from './directives/alert/alert.service';
+import { MatrixHeaderComponent } from './components/matrix-header/matrix-header.component';
 
 @NgModule({
   imports: [
@@ -15,9 +17,16 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     PageNotFoundComponent,
     AlertComponent
   ],
+  exports: [
+    MaterialModule,
+    AlertComponent,
+    PageNotFoundComponent
+  ],
   providers: [
     ErrorInterceptor,
-    fakeBackendProvider
-  ]
+    AlertService,
+
+    // fakeBackendProvider,
+  ],
 })
 export class SharedModule { }

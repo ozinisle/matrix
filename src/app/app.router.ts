@@ -5,34 +5,63 @@ import { LandingPageComponent } from './modules/landing-page/landing-page/landin
 import { AuthGuard } from './security/guards/auth.guard';
 import { LoginComponent } from './security/components/login/login.component';
 import { RegisterComponent } from './security/components/register/register.component';
+import {
+    AuthenticatedContentLayoutComponent
+} from './security/components/authenticated-content-layout/authenticated-content-layout.component';
 
 export const router: Routes = [
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: 'home',
         pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        component: AuthenticatedContentLayoutComponent,
+        children: [{
+            path: '',
+            component: LoginComponent
+        }]
+    },
+    {
+        path: 'register',
+        component: AuthenticatedContentLayoutComponent,
+        children: [{
+            path: '',
+            component: RegisterComponent
+        }]
     },
     {
         path: 'home',
         canActivate: [AuthGuard],
-        component: LandingPageComponent
+        loadChildren: 'app/modules/landing-page/landing-page.module#LandingPageModule',
     },
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'contacts',
+        canActivate: [AuthGuard],
+        loadChildren: 'app/modules/my-contacts/my-contacts.module#MyContactsModule',
     },
     {
-        path: 'register',
-        component: RegisterComponent
+        path: 'moi',
+        canActivate: [AuthGuard],
+        loadChildren: 'app/modules/moi/moi.module#MoiModule',
     },
     {
         path: '404',
-        component: PageNotFoundComponent
+        component: AuthenticatedContentLayoutComponent,
+        children: [{
+            path: '',
+            component: PageNotFoundComponent
+        }]
     },
     {
         path: '**',
-        component: PageNotFoundComponent
+        component: AuthenticatedContentLayoutComponent,
+        children: [{
+            path: '',
+            component: PageNotFoundComponent
+        }]
     }
 ];
 
-export const appRouter: ModuleWithProviders = RouterModule.forRoot(router);
+export const appRouter: ModuleWithProviders = RouterModule.forRoot(router, { useHash: true });

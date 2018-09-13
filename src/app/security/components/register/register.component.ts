@@ -2,8 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
-// import { AlertService, UserService } from '../_services';
+import { UserService } from '../../services/user.service';
+import { AlertService } from '../../../shared/directives/alert/alert.service';
+import { MatrixConstants } from '../../../shared/constants/matrix.constants';
+import { AuthenticationService } from '../../services/authentication.service';
+import { MatrixCommunicationChannelEncryptionService } from '../../services/matrix-communication-channel-encryption.service';
+import { OpenSSLCommTransactionInterface } from '../../interfaces/matrix-message-security.interface';
+import { MatrixRegistrationResponseModelInterface } from '../../interfaces/registration-model.interface';
+import { MatrixRegistrationResponseModel } from '../../models/registration.model';
+import { MatrixErrorHandlerService } from '../../../shared/services/matrix-error-handler.service';
 
 @Component({
   selector: 'app-register',
@@ -17,17 +24,20 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    // private userService: UserService,
-    // private alertService: AlertService
+    private alertService: AlertService,
+    private authService: AuthenticationService,
+    private commChannelEncryptor: MatrixCommunicationChannelEncryptionService,
+    private errorHandler: MatrixErrorHandlerService
   ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      mobile: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -43,16 +53,28 @@ export class RegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    // this.userService.register(this.registerForm.value)
-    //   .pipe(first())
-    //   .subscribe(
-    //     data => {
-    //       this.alertService.success('Registration successful', true);
-    //       this.router.navigate(['/login']);
-    //     },
-    //     error => {
-    //       this.alertService.error(error);
-    //       this.loading = false;
-    //     });
+    this.authService.registerUser(this.registerForm.value)
+      .subscribe(
+        data => {
+          try {
+            console.log('registration encrypted response >>> ' + data);
+            // this.alertService.success(MatrixConstants.messages.registrationSuccess, true);
+            // this.router.navigate([MatrixConstants.url.login]);
+            console.log('registration decrypted response >>> ' +
+              this.commChannelEncryptor.CryptoJS_Aes_OpenSSL_Decrypt(data));
+
+            const registrationResponse: MatrixRegistrationResponseModelInterface =
+              <MatrixRegistrationResponseModel>this.commChannelEncryptor.CryptoJS_Aes_OpenSSL_Decrypt(data);
+
+            this.loading = false;
+          } catch (error) {
+            this.errorHandler.handleError(error);
+          }
+        },
+        error => {
+          this.errorHandler.handleError(error);
+          this.alertService.error(error);
+          this.loading = false;
+        });
   }
 }

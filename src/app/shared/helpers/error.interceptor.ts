@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from '../../security/services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import { _throw } from 'rxjs/observable/throw';
+import { MatrixConstants } from '../constants/matrix.constants';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -12,8 +13,10 @@ export class ErrorInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request).pipe(catchError(err => {
             if (err.status === 401) {
-                // auto logout if 401 response returned from api
-                this.authenticationService.logout();
+                if (localStorage.getItem(MatrixConstants.commonTerms.currentUser)) {
+                    // auto logout if 401 response returned from api
+                    this.authenticationService.logout();
+                }
                 location.reload(true);
             }
 
