@@ -16,4 +16,8 @@ export class MatrixHttpService {
     return this.http.post<any>(url, encryptedRequest);
   }
 
+  doUnencryptedGet(url: string): Observable<any> {
+    return this.http.get(url);
+  }
+
 }

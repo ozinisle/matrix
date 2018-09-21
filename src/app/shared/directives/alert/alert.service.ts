@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 
 @Injectable()
@@ -32,6 +32,17 @@ export class AlertService {
     error(message: string, keepAfterNavigationChange = false) {
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'error', text: message });
+    }
+
+    handleException(exception: Error, moduleName: string, componentName: string, methodName: string, keepAfterNavigationChange = false) {
+        const errorMessage: string =
+            `Error occured in method >>> ${methodName} in component >>> ${componentName} in module >>> ${moduleName}
+            ${exception.stack}`;
+
+        console.error(errorMessage);
+
+        this.keepAfterNavigationChange = keepAfterNavigationChange;
+        this.subject.next({ type: 'error', text: errorMessage });
     }
 
     getMessage(): Observable<any> {

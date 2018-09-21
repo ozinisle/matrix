@@ -15,6 +15,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { MoiModule } from './modules/moi/moi.module';
 import { MyContactsModule } from './modules/my-contacts/my-contacts.module';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
+import { MemoryQuotesModule } from './modules/memory-quotes/memory-quotes.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
     SecurityModule,
     LandingPageModule,
     MyContactsModule,
-    MoiModule
+    MoiModule,
+    MemoryQuotesModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },

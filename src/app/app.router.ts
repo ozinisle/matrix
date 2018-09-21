@@ -47,6 +47,11 @@ export const router: Routes = [
         loadChildren: 'app/modules/moi/moi.module#MoiModule',
     },
     {
+        path: 'memory-quotes',
+        canActivate: [AuthGuard],
+        loadChildren: 'app/modules/memory-quotes/memory-quotes.module#MemoryQuotesModule',
+    },
+    {
         path: '404',
         component: AuthenticatedContentLayoutComponent,
         children: [{

@@ -9,6 +9,7 @@ export const MatrixConstants = Object.freeze({
         loginUrl: '/login',
         registrationUrl: 'authentication/register-user.php',
         signOutUrl: 'authentication/sign-out.php',
+        getQuoteToMemoryListApiUrl: 'http://localhost/matrix/assets/data/quote-to-memory-module/quote-to-memory-list-response-sample.json'
     },
     messages: {
         registrationSuccess: 'Registration successful',

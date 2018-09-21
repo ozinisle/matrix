@@ -1,10 +1,17 @@
-import { MatrixPhoneType } from './types/matrix-common.types';
+import { MatrixPhoneType, MatrixBooleanStringType } from './types/matrix-common.types';
 import {
     MatrixPhoneModelInterface,
     MatrixBaseAddressModelInterface,
     MatrixLandMarkModelInterface,
-    MatrixAddressModelInterface
+    MatrixAddressModelInterface,
+    MatrixUserInterface
 } from './interface/matrix-common-models.interface';
+
+export class MatrixUser implements MatrixUserInterface {
+    authenticatedUserName: string; // example "Vishwa Muneeswaran"
+    isAuthenticated: MatrixBooleanStringType; // "true" or "false"
+    token: string; // jwt token string
+}
 
 export class MatrixBaseAddressModel implements MatrixBaseAddressModelInterface {
     doorNumber: string;

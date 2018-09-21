@@ -18,6 +18,7 @@ export class LandingPageComponent implements OnInit, LandingPageComponentInterfa
   ngOnInit() {
     this.links.push((new BaseMenuItemModal()).setLabel('Contacts').setNavigationRouteUrl('contacts'));
     this.links.push((new BaseMenuItemModal()).setLabel('Moi').setNavigationRouteUrl('moi'));
+    this.links.push((new BaseMenuItemModal()).setLabel('Quote to Memory').setNavigationRouteUrl('memory-quotes'));
   }
 
   public openModule(link: BaseMenuItemInterface): void {
