@@ -1,0 +1,354 @@
+[
+    {
+        "eventName": "event name",
+        "eventDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed rutrum nulla, ac gravida nisl. Nulla sagittis ac ex eu convallis. Quisque volutpat mattis neque sit amet iaculis. Nullam volutpat a mauris nec semper. Phasellus eget nunc ornare, hendrerit diam quis, pulvinar dui. Quisque et justo eget nisl consequat cursus a sed sapien. Curabitur consequat at ex et molestie. In hac habitasse platea dictumst. Proin ullamcorper nisi justo. Vivamus id risus sed turpis feugiat euismod. Quisque vel eros sit amet mauris ullamcorper tincidunt. Integer posuere eleifend sagittis.",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed rutrum nulla, ac gravida nisl. Nulla sagittis ac ex eu convallis. Quisque volutpat mattis neque sit amet iaculis. Nullam volutpat a mauris nec semper. Phasellus eget nunc ornare, hendrerit diam quis, pulvinar dui. Quisque et justo eget nisl consequat cursus a sed sapien. Curabitur consequat at ex et molestie. In hac habitasse platea dictumst. Proin ullamcorper nisi justo. Vivamus id risus sed turpis feugiat euismod. Quisque vel eros sit amet mauris ullamcorper tincidunt. Integer posuere eleifend sagittis.",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    },
+    {
+        "eventName": "event name",
+        "eventDescription": "event description",
+        "peopleInvolved": [
+            "person 1",
+            "person 2",
+            "person 3",
+            "person 4"
+        ],
+        "entitiesInvolved": [
+            "entity 1",
+            "entity 2",
+            "entity 3",
+            "entity 4"
+        ],
+        "locationInvolved": [
+            "location 1",
+            "location 2",
+            "location 3",
+            "location 4"
+        ],
+        "categories": [
+            "category 1",
+            "category 2",
+            "category 3",
+            "category 4"
+        ],
+        "date": "01/01/2018",
+        "time": "17:00:00",
+        "experienceType": "positive",
+        "comments:": "some comments"
+    }
+]
